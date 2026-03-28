@@ -1,0 +1,87 @@
+# Football Predictor Configuration
+# Copy this file to settings.yaml and fill in your API keys
+
+api_keys:
+  football_data: "943b6ac99c014b4788ee25284a949c2e"      # football-data.org
+  api_football: "943b6ac99c014b4788ee25284a949c2e"       # API-Football (RapidAPI)
+
+# League configurations with IDs for each data source
+leagues:
+  EPL:
+    name: "Premier League"
+    country: "England"
+    football_data_id: "PL"
+    api_football_id: 39
+    fbref_slug: "Premier-League"
+  LA_LIGA:
+    name: "La Liga"
+    country: "Spain"
+    football_data_id: "PD"
+    api_football_id: 140
+    fbref_slug: "La-Liga"
+  BUNDESLIGA:
+    name: "Bundesliga"
+    country: "Germany"
+    football_data_id: "BL1"
+    api_football_id: 78
+    fbref_slug: "Bundesliga"
+  SERIE_A:
+    name: "Serie A"
+    country: "Italy"
+    football_data_id: "SA"
+    api_football_id: 135
+    fbref_slug: "Serie-A"
+  LIGUE_1:
+    name: "Ligue 1"
+    country: "France"
+    football_data_id: "FL1"
+    api_football_id: 61
+    fbref_slug: "Ligue-1"
+
+# International competitions
+international:
+  WORLD_CUP:
+    name: "FIFA World Cup"
+    api_football_id: 1
+  EUROS:
+    name: "UEFA European Championship"
+    api_football_id: 4
+  NATIONS_LEAGUE:
+    name: "UEFA Nations League"
+    api_football_id: 5
+  FRIENDLIES:
+    name: "International Friendlies"
+    api_football_id: 10
+
+# Over/Under thresholds
+thresholds:
+  goals: [0.5, 1.5, 2.5, 3.5, 4.5]
+  corners: [7.5, 8.5, 9.5, 10.5, 11.5, 12.5]
+
+# Model parameters
+model:
+  goals:
+    rolling_window: 10
+    min_matches: 5
+  corners:
+    rolling_window: 10
+    min_matches: 5
+    n_estimators: 200
+    max_depth: 4
+    learning_rate: 0.1
+
+# Rate limiting (requests per minute)
+rate_limits:
+  football_data: 10
+  api_football: 10
+  fbref: 6
+  understat: 6
+
+# Database
+database:
+  path: "data/football_predictor.db"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "data/predictor.log"
