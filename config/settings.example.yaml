@@ -2,8 +2,8 @@
 # Copy this file to settings.yaml and fill in your API keys
 
 api_keys:
-  football_data: "your_key_here"      # football-data.org
-  api_football: "your_key_here"       # API-Football (RapidAPI)
+  football_data: "943b6ac99c014b4788ee25284a949c2e"      # football-data.org
+  api_football: "943b6ac99c014b4788ee25284a949c2e"       # API-Football (RapidAPI)
 
 # League configurations with IDs for each data source
 leagues:
